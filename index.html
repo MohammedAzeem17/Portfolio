@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azeem Portfolio</title>
+    <style>
+        @media screen and (orientation:portrait){
+            body{
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           overflow-x: hidden;
+           background-color: rgba(213, 249, 217,0.9);
+       }
+       ul{
+           list-style: none;
+       }
+
+       header{
+           display: flex;
+           justify-content: space-between;
+           font-size: 15px;
+           background-color: rgba(213, 249, 217,0.5);
+           height: 100px;
+           position: sticky;
+           top: 2px;
+           display: grid;
+           grid-template-columns: 3fr 9fr;
+       }
+       ul li{
+        display: inline;
+        margin-bottom: 5px;
+        margin-left: 15px;
+       }
+       .left{
+           margin-top: 10px;
+           margin-left: 15px;
+           transition: 1s;
+           color: rgb(118, 95, 95);
+       }
+       a{
+           color: rgb(118, 95, 95);
+           position: relative;
+           text-decoration: none;
+       }
+       .myname{
+           font-weight: 500;
+       }
+       a:hover{
+           color: black;
+       }
+       a::before{
+           content: '';
+           position: absolute;
+           background-color:darkcyan;
+           bottom: -10px;
+           left: 0;
+           width: 0%; height: 3px;
+           transition: all .5s;
+       }
+       a:hover::before{
+           opacity: 2;
+           width: 100%;
+       }
+       section{
+           display: grid;
+           grid-template-columns: 12fr;
+           font-size: 20px;
+           font-weight: 200;
+           text-align:start;
+           padding: 15px;
+           border: 1px solid #65e365;
+           margin-left: 20px;
+           border-radius: 10%;
+           transition: 2;
+           box-shadow:  2px 1px 5px;
+       }
+       .card{
+           font-size: 20px;
+           font-weight: 200;
+           text-align:start;
+           padding: 15px;
+           border: 1px solid #65e365;
+           margin-left: 20px;
+           border-radius: 10%;
+           transition: 2s;
+           box-shadow:  2px 1px 5px;
+           margin-top: 10px;
+           width: 300px;
+           margin-left: 100px;
+           transition: 1s;
+       }
+       .heading{
+           text-decoration: underline;
+       }
+       .skills{
+        display: grid;
+        grid-template-columns: 6fr 6fr;
+       }
+       .skillcard{
+           font-size: 20px;
+           font-weight: 200;
+           text-align:start;
+           padding: 15px;
+           border: 1px solid rgb(141, 231, 141);
+           margin-left: 20px;
+           border-radius: 10%;
+           box-shadow: 2px 1px 5px;
+           margin-top: 20px;
+           transition: 1s;
+       }
+       .hobbiescard{
+           font-size: 20px;
+           font-weight: 200;
+           text-align:start;
+           padding: 15px;
+           border: 1px solid rgb(141, 231, 141);
+           margin-left: 20px;
+           border-radius: 10%;
+           box-shadow: 2px 1px 5px;
+           width: 200px;
+           margin-top: 60px;
+           transition: 1s;
+       }
+       .hobbies{
+          display: grid;
+          grid-template-columns: 6fr 6fr;
+          justify-content: center;
+       }
+       .hobbiesimg{
+          margin-left: 10px;
+          border-radius: 50%;
+       }
+       .hobbiesimgs{
+        border-radius: 50%;
+         width: 200px;
+       }
+       .contactcard
+       {
+           font-size: 20px;
+           font-weight: 200;
+           text-align:start;
+           padding: 15px;
+           border: 1px solid rgb(141, 231, 141);
+           margin-left: 20px;
+           border-radius: 10%;
+           box-shadow: 2px 1px 5px;
+           width: 200px;
+           margin-top: 10px;
+           transition: 1s;
+       }
+       .contact{
+           display: grid;
+           grid-template-columns: 6fr 6fr;
+           margin-right: 50px;
+       }
+       .card:hover{
+               color:black;
+               border-radius: 10%;
+               box-shadow: 0 0 5px  #a5e6a5,
+               0 0 25px #b4eeb4,
+               0 0 50px #b1e3b1,
+               0 0 100px  #a5e6a5;
+               transition: 2s;
+               transform: translateY(-3%);
+       }
+       .skillcard:hover{
+           color:black;
+               border-radius: 10%;
+               box-shadow: 0 0 5px  #a5e6a5,
+               0 0 25px #b4eeb4,
+               0 0 50px #b1e3b1,
+               0 0 100px  #a5e6a5;
+               transition: 2s;
+               transform: translateY(-3%);
+       }
+       .hobbiescard:hover{
+           color:black;
+               border-radius: 10%;
+               box-shadow: 0 0 5px  #a5e6a5,
+               0 0 25px #b4eeb4,
+               0 0 50px #b1e3b1,
+               0 0 100px  #a5e6a5;
+               transition: 2s;
+               transform: translateY(-7%);        
+       }
+       .contactcard:hover{
+               color:black;
+               border-radius: 10%;
+               box-shadow: 0 0 5px  #a5e6a5,
+               0 0 25px #b4eeb4,
+               0 0 50px #b1e3b1,
+               0 0 100px  #a5e6a5;
+               transition: 2s;
+               transform: translateY(-3%);    
+          }
+          .left{
+            font-weight: 500;
+        }
+        .left:hover{
+           margin-left: 2px;
+           transition: 1s;
+           color: black;
+       }
+    }
+        @media screen and (orientation: landscape){
+            body{
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           overflow-x: hidden;
+           background-color: rgba(213, 249, 217,0.9);
+       }
+       ul{
+           list-style: none;
+       }
+       header{
+           display: flex;
+           justify-content: space-between;
+           font-size: 25px;
+           background-color: rgba(213, 249, 217,0.5);
+           height: 100px;
+           position: sticky;
+           top: 2px;
+       }
+       ul li{
+           list-style: none;
+           display: inline;
+           margin-left: 40px;
+           cursor: pointer;
+       }
+       .left{
+           margin-top: 27px;
+           margin-left: 40px;
+           transition: 1s;
+           color: rgb(118, 95, 95);
+       }
+       .left:hover{
+           margin-left: 2px;
+           transition: 1s;
+           color: black;
+       }
+       .right{
+           margin-right:40px ;
+       }
+       section{
+           display: grid;
+           grid-template-columns: 6fr 6fr;
+       }
+       .mainleft{
+           font-size: 25px;
+           font-weight: 200;
+           text-align: justify;
+           padding: 20px;
+       }
+       .myname{
+           font-weight: 500;
+       }
+       img{
+           background-size: cover; 
+           border-radius: 50%;
+       }
+       .mainright{
+           margin-left: 200px;
+       }
+       section{
+           margin-top: 50px;
+       }
+       a{
+           color: rgb(118, 95, 95);
+           position: relative;
+           text-decoration: none;
+       }
+       a:hover{
+           color: black;
+       }
+       a::before{
+           content: '';
+           position: absolute;
+           background-color:darkcyan;
+           bottom: -10px;
+           left: 0;
+           width: 0%; height: 3px;
+           transition: all .5s;
+       }
+       a:hover::before{
+           opacity: 2;
+           width: 100%;
+       }
+       .edud{
+           margin-top: 100px;
+           width: 90%;
+           color: rgb(0, 18, 18);
+       }
+       .card{
+           font-size: 20px;
+           font-weight: 200;
+           text-align:start;
+           padding: 15px;
+           border: 1px solid #65e365;
+           margin-left: 20px;
+           border-radius: 10%;
+           transition: 2;
+           box-shadow:  2px 1px 5px;
+       }
+       .card:hover{
+               color:black;
+               border-radius: 10%;
+               box-shadow: 0 0 5px  #a5e6a5,
+               0 0 25px #b4eeb4,
+               0 0 50px #b1e3b1,
+               0 0 100px  #a5e6a5;
+               transition: 2s;
+               transform: translateY(-10%);
+       }
+       .marginside{
+           margin-left: 20px;
+       }
+       .about{
+           display: grid;
+           grid-template-columns: 4fr 4fr 4fr;
+           margin-top: 50px;
+          
+       }
+       .heading{
+           text-decoration: underline;
+       }
+       .skills{
+           display: grid;
+           grid-template-columns: 3fr 3fr 3fr 3fr;
+           margin-top: 50px;
+       }
+       .skillcard{
+           font-size: 20px;
+           font-weight: 200;
+           text-align:start;
+           padding: 15px;
+           border: 1px solid rgb(141, 231, 141);
+           margin-left: 20px;
+           border-radius: 10%;
+           box-shadow: 2px 1px 5px;
+       }
+       .skillcard:hover{
+           color:black;
+               border-radius: 10%;
+               box-shadow: 0 0 5px  #a5e6a5,
+               0 0 25px #b4eeb4,
+               0 0 50px #b1e3b1,
+               0 0 100px  #a5e6a5;
+               transition: 2s;
+               transform: translateY(-10%);
+       }
+       .skillheading{
+           text-decoration: underline;
+           margin-left: 20px;
+           margin-top: 50px;
+
+       }
+       .skills{
+           margin-top: 80px;
+       }
+       .hobbiescard{
+           font-size: 20px;
+           font-weight: 200;
+           text-align:start;
+           padding: 15px;
+           border: 1px solid rgb(141, 231, 141);
+           margin-left: 20px;
+           border-radius: 10%;
+           box-shadow: 2px 1px 5px;
+           width: 250px;
+           margin-top: 60px;
+       }
+       .hobbiescard:hover{
+           color:black;
+               border-radius: 10%;
+               box-shadow: 0 0 5px  #a5e6a5,
+               0 0 25px #b4eeb4,
+               0 0 50px #b1e3b1,
+               0 0 100px  #a5e6a5;
+               transition: 2s;
+               transform: translateY(-10%);        
+       }
+       .hobbies{
+           display: grid;
+           grid-template-columns: 4fr 4fr 4fr;
+           margin: 40px;
+       }
+       .hobbiesheading{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           font-weight: bold;
+       }
+       .hobbiesimg{
+           display: flex;
+           justify-content: center;
+
+       }
+       .contact{
+           display: grid;
+           grid-template-columns: 3fr 3fr 3fr 3fr;
+           margin-right: 50px;
+       }
+       .contactcard
+       {
+           font-size: 20px;
+           font-weight: 200;
+           text-align:start;
+           padding: 15px;
+           border: 1px solid rgb(141, 231, 141);
+           margin-left: 20px;
+           border-radius: 10%;
+           box-shadow: 2px 1px 5px;
+           width: 250px;
+           margin-top: 30px;
+       }
+       .contactcard:hover{
+               color:black;
+               border-radius: 10%;
+               box-shadow: 0 0 5px  #a5e6a5,
+               0 0 25px #b4eeb4,
+               0 0 50px #b1e3b1,
+               0 0 100px  #a5e6a5;
+               transition: 2s;
+               transform: translateY(-10%);    
+          }
+        }
+    </style>
+</head>
+<body>
+    <span id="home"></span>
+    <header>
+        <div class="left">
+            Mohammed Azeemuddin
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skill" class="nav-link">Skills</a></li>
+                <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+            <section>
+                <div class="mainleft">
+                <p class="myname">Hi, I'm Mohammed Azeemuddin</p>
+                <p class="homedetails">
+                    I have completed my Bachelor in Engineering from ISL institute of engineering and technology and my specialization in Computer Science and Engineering. I wish to use my technical ability to make a good decisions to contribute to a team which move towords the development & explore towords new technologies. I'm a good listener ..
+                </p>
+                </div>
+                <div class="mainright">
+                    <img src="../images2/WhatsApp Image 2024-03-17 at 4.59.25 PM.jpeg" height="400px" width="400px"> 
+                </div>
+            </section>
+            <div class="marginside" id="about">
+                <hr class="edud">
+                <h1 class="edu">Education</h1>
+            </div>
+          <div class="about">
+                <div class="card">
+                    <h2 class="heading">Bachelor of Engineering</h2>
+                  <p> I am Mohammed Azeemuddin,recently I have completed B.E at ISL Institude of Engineering & Technology affiliated to the Osmania University & my specialization in Computer Science and Engineering. my overall CGPA is 7.0.</p>
+                </div>
+                <div class="card">
+                    <h2 class="heading">Intermediate</h2>
+                    <p>I completed my intermediate education from Narayana junior college, with a MPC course between 2017 and 2019 and my overall percentage is 80% .</p>
+                </div>
+                <div class="card">
+                    <h2 class="heading">Schooling</h2>
+                    <p>I completed my schooling from Spring field high school, between 2007 and 2017 and my overall GPA is 6.8 .</p>
+                </div>
+          </div>
+          <hr class="edud" id="skill">
+          <h1 class="skillheading">Skills</h1>
+          <div class="skills">
+            <div class="skillcard">
+                <h3>HTML</h3>
+                <p>Hypertext Markup Language, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages.</p>
+            </div>
+            <div class="skillcard">
+                <h3>CSS</h3>
+                <p>CSS is used to define styles for your web pages, including the design, layout and variations in display for different devices and screen sizes.</p>
+            </div>
+            <div class="skillcard">
+                <h3>BOOTSTRAP</h3>
+                <p> Bootstrap is a free front-end framework for faster and easier web development. </p>
+            </div>
+            <div class="skillcard">
+                <h3>JAVASCRIPT</h3>
+                <p> JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. </p>
+            </div>
+          </div>
+          <div class="skills" id="skill">
+            <div class="skillcard">
+                <h3>JAVA</h3>
+                <p>JAVA was developed by James Gosling at Sun Microsystems Inc in the year 1995 and later acquired by Oracle Corporation. It is a simple programming language.</p>
+            </div>
+            <div class="skillcard">
+                <h3>JDBC</h3>
+                <p>JDBC stands for Java Database Connectivity. JDBC is a Java API to connect and execute the query with the database.</p>
+            </div>
+            <div class="skillcard">
+                <h3>SERVLET</h3>
+                <p>A servlet is a Java programming language class that is used to extend the capabilities of servers that host applications accessed by means of a request-response programming model.</p>
+            </div>
+            <div class="skillcard">
+                <h3>JSP</h3>
+                <p> Jakarta Server Pages (JSP; formerly JavaServer Pages) is a collection of technologies that helps software developers create dynamically generated web pages based on HTML, XML, SOAP, or other document types.  </p>
+            </div>
+        </div>
+        <hr class="edud">
+        <h1 style="text-decoration: underline;">Hobbies</h1>
+        <div class="hobbies" id="hobbies">
+            <div class="hobbiescard">
+                <p class="hobbiesheading">FOOTBALL</p>
+                <img src="../images2/football.jfif" height="150px" class="hobbiesimgs">
+                <p class="hobbiesdef">Football is a family of team sports that involve, to varying degrees, kicking a ball to score a goal.</p>
+            </div>
+            <div class="hobbiescard">
+                <p class="hobbiesheading">CRICKET</p>
+                <img src="../images2/cricket.jfif" height="150px" class="hobbiesimg">
+                <p class="hobbiesdef">Cricket is a bat-and-ball game played between two teams of eleven players on a field at the centre of which is a 22-yard (20-metre) pitch with a wicket at each end, each comprising two bails balanced on three stumps.</p>
+            </div>
+            <div class="hobbiescard">
+                <p class="hobbiesheading">VALLYBALL</p>
+                <img src="../images2/vallyball.png" height="150px" class="hobbiesimg">
+                <p class="hobbiesdef">volleyball, game played by two teams, usually of six players on a side, in which the players use their hands to bat a ball back and forth over a high net, trying to make the ball touch the court within the opponents' playing area before it can be returned.</p>
+            </div>
+            <div class="hobbiescard">
+                <p class="hobbiesheading">WATCHING MOVIES</p>
+                <img src="../images2/movie.jfif" height="150px" class="hobbiesimg">
+                <p class="hobbiesdef"> A film, also known as a "movie" or a "motion picture," is a series of moving images shown on a screen, usually with sound, that make up a story.</p>
+            </div>
+            <div class="hobbiescard">
+                <p class="hobbiesheading">TRAVELLING</p>
+                <img src="../images2/travel.jfif" height="150px" class="hobbiesimg">
+                <p class="hobbiesdef">Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship or other means, with or without luggage, and can be one way or round trip.</p>
+            </div>
+            <div class="hobbiescard">
+                <p class="hobbiesheading">SWIMMING</p>
+                <img src="../images2/swimming.png" height="150px" class="hobbiesimg">
+                <p class="hobbiesdef">Swimming is an individual or team racing sport that requires the use of one's entire body to move through water.</p>
+            </div>
+        </div>
+        <hr class="edud">
+        <h1>For Contact</h1>
+        <div class="contact" id="contact">
+            <div class="contactcard">
+                <h3>Phone Number</h3>
+                <p>For Contact</p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                  </svg>&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+918247795606">Click here </a>
+            </div>
+            <div class="contactcard">
+                <h3>Email</h3>
+                <p>Email</p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                  </svg>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "mailto: azeemmd373@gmail.com">Send Email</a>
+            </div>
+            <div class="contactcard">
+                <h3>Github</h3>
+                <p>My Work Github</p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                  </svg>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/MohammedAzeem17" target="_blank">Github link</a>
+            </div>
+            <div class="contactcard">
+                <h3>My Resume</h3>
+                <p>Download Resume</p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                  </svg>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../AzeemPortfolio/Azeem Resume1.pdf"class='download' download="Resume PDF">Download CV</a>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Smooth scroll function
+        function scrollToSection(elementId) {
+            document.getElementById(elementId).scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+        // Attach click event handlers to the anchor links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                const targetId = link.getAttribute('href').slice(1); // Get the target element ID
+                scrollToSection(targetId); // Scroll to the target element
+            });
+        });
+    </script>
+</body>
+</html>
